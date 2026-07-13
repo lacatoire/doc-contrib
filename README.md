@@ -2,7 +2,7 @@
 
 Third-party PHP extension documentation.
 
-This repository hosts documentation for PHP extensions distributed outside the PHP core — primarily PECL extensions and other community-maintained packages. It mirrors the structure and tooling of [php/doc-en](https://github.com/php/doc-en).
+This repository hosts documentation for PHP extensions distributed outside the PHP core, primarily PECL extensions and other community-maintained packages. It mirrors the structure and tooling of [php/doc-en](https://github.com/php/doc-en).
 
 ## Background
 
