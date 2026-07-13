@@ -2,11 +2,17 @@
 
 Third-party PHP extension documentation.
 
-This repository hosts documentation for PHP extensions distributed outside the PHP core, primarily PECL extensions and other community-maintained packages. It mirrors the structure and tooling of [php/doc-en](https://github.com/php/doc-en).
+This repository receives documentation for PHP extensions migrated *out of* [php/doc-en](https://github.com/php/doc-en) — primarily abandoned or unmaintained PECL extensions that no longer belong in the core manual. It mirrors the structure and tooling of [php/doc-en](https://github.com/php/doc-en).
 
 ## Background
 
-This repository is the outcome of the [Separation of Third-Party Extension Documentation RFC](https://wiki.php.net/rfc/third-party-code), accepted in June 2026. Documentation for bundled PHP extensions remains in [php/doc-en](https://github.com/php/doc-en).
+This repository is the outcome of the [Separation of Third-Party Extension Documentation RFC](https://wiki.php.net/rfc/third-party_code), accepted in June 2026. Documentation for bundled PHP extensions remains in [php/doc-en](https://github.com/php/doc-en).
+
+This repository is intended to be transferred to the php organization once the migration workflow is validated on the first batch of extensions.
+
+## Translations
+
+Currently, only English documentation is hosted here. Translation support and directory structure (`lang/` folders) are under discussion and will be addressed before broader adoption.
 
 ## Contributing
 
