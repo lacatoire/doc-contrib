@@ -7,6 +7,7 @@
  <project>
   <directory alias="doc-en">.</directory>
   <directory>../doc-base</directory>
+  <directory>../en</directory>
  </project>
 
  <sniffs>
