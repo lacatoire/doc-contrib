@@ -19,7 +19,7 @@ concurrency:
 
 jobs:
   docbook-cs:
-    name: "DocBook Style Check"
+    name: "Build & Lint"
     runs-on: "ubuntu-latest"
 
     env:
