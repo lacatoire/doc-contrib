@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE PHPDOC [
 
+<!-- Generated build files live in a sibling doc-base checkout (../doc-base),
+     the same layout every PHP documentation build already assumes. -->
+
 <!-- Parameter entities used to configure manual.xml -->
 <!ENTITY % configure         SYSTEM "../doc-base/temp/manual.inc">
 %configure;
@@ -31,7 +34,7 @@
 
 <set xmlns="http://docbook.org/ns/docbook" version="5.2" xml:id="index" xml:lang="&LANG;" xmlns:xlink="http://www.w3.org/1999/xlink">
  <info>
-  <title>&PHPManual;</title>
+  <title>PHP Extension Documentation</title>
   <abstract>
    <para>
     Documentation for PHP extensions distributed outside the PHP core
