@@ -8,13 +8,9 @@
 <!ENTITY % configure         SYSTEM "../doc-base/temp/manual.inc">
 %configure;
 
-<!-- Entities collected by entities.php -->
+<!-- Entities collected by entities.php (includes entities/main-manual.ent) -->
 <!ENTITY % manual-entities   SYSTEM "../doc-base/temp/entities.ent">
 %manual-entities;
-
-<!-- Links into the main manual, declared early so they take precedence -->
-<!ENTITY % main-manual.entities SYSTEM "./main-manual.ent">
-%main-manual.entities;
 
 <!-- Translation layer, if any -->
 %translation-defs;

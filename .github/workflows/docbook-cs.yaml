@@ -33,24 +33,21 @@ jobs:
         }}
 
     steps:
-      - name: "Checkout doc-contrib"
+      - name: "Checkout doc-contrib as the language directory"
         uses: "actions/checkout@v7"
         with:
           ref: "${{ github.event.pull_request.head.sha }}"
-          path: "doc-contrib"
+          path: "en"
           fetch-depth: 50
 
-      - name: "Checkout php/doc-en"
-        uses: "actions/checkout@v7"
-        with:
-          path: "en"
-          repository: "php/doc-en"
-
-      - name: "Checkout php/doc-base"
+      # TODO: switch to php/doc-base once per-language manual.xml support
+      # (php/doc-base#322) is merged.
+      - name: "Checkout doc-base"
         uses: "actions/checkout@v7"
         with:
           path: "doc-base"
-          repository: "php/doc-base"
+          repository: "lacatoire/doc-base"
+          ref: "feat/per-language-manual"
 
       - name: "Checkout php/docbook-cs"
         uses: "actions/checkout@v7"
@@ -67,7 +64,7 @@ jobs:
 
       - name: "Fetch diff base"
         if: ${{ env.INITIAL_PUSH != 'true' }}
-        working-directory: "doc-contrib"
+        working-directory: "en"
         run: |
           git fetch origin "$BASE_SHA" --depth=50
           for i in 1 2 3 4 5; do
@@ -82,6 +79,8 @@ jobs:
           extensions: "dom, libxml, simplexml"
           tools: composer, cs2pr
 
+      # Building generates temp/entities.ent, which docbookcs.xml loads so the
+      # linter can resolve this manual's own entities (e.g. main-manual.ent).
       - name: "Build documentation"
         run: |
           php doc-base/configure.php \
@@ -95,7 +94,7 @@ jobs:
         run: composer install --no-interaction --no-progress
 
       - name: "Run docbook-cs on diff"
-        working-directory: "doc-contrib"
+        working-directory: "en"
         run: |
           set -o pipefail
           if [ "$INITIAL_PUSH" = "true" ]; then
@@ -112,9 +111,9 @@ jobs:
         uses: "actions/upload-artifact@v7"
         with:
           name: "docbook-report"
-          path: "doc-contrib/docbook-report.xml"
+          path: "en/docbook-report.xml"
 
       - name: "Annotate PR with violations"
         if: ${{ ! cancelled() }}
-        working-directory: "doc-contrib"
+        working-directory: "en"
         run: cs2pr docbook-report.xml --colorize --prepend-filename
