@@ -1,0 +1,53 @@
+# https://docs.github.com/en/actions
+
+name: "Build"
+
+on:
+  push:
+    branches:
+      - "master"
+  pull_request:
+    branches:
+      - "master"
+
+permissions:
+  contents: "read"
+
+concurrency:
+  group: "${{ github.workflow }}-${{ github.ref }}"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: "Build Check"
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - name: "Checkout doc-contrib as the language directory"
+        uses: "actions/checkout@v7"
+        with:
+          ref: "${{ github.event.pull_request.head.sha }}"
+          path: "en"
+
+      # TODO: switch to php/doc-base once per-language manual.xml support
+      # (php/doc-base#322) is merged.
+      - name: "Checkout doc-base"
+        uses: "actions/checkout@v7"
+        with:
+          path: "doc-base"
+          repository: "lacatoire/doc-base"
+          ref: "feat/per-language-manual"
+
+      - name: "Setup PHP"
+        uses: "shivammathur/setup-php@v2"
+        with:
+          php-version: "8.5"
+          extensions: "dom, libxml, simplexml"
+
+      - name: "Build and validate the manual"
+        run: |
+          php doc-base/configure.php \
+            --disable-libxml-check \
+            --enable-xml-details \
+            --redirect-stderr-to-stdout \
+            --with-lang=en
