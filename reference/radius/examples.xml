@@ -24,8 +24,8 @@
   MS-CHAPv1 or MS-CHAPv2, but its more complicated, because you need md4,
   sha1 and des to generate the right data. The enclosed examples demonstrate
   all authentication-methods, including MS-CHAPv1 and MS-CHAPv2. To get the
-  MS-CHAP to work you need the <link xlink:href="https://www.php.net/manual/en/ref.mcrypt.php">mcrypt</link> and
-  the <link xlink:href="https://www.php.net/manual/en/ref.mhash.php">mhash</link> extension, starting with
+  MS-CHAP to work you need the &link.ref.mcrypt; and
+  the &link.ref.mhash; extension, starting with
   version 1.2 of the package, the mcrypt extension is no longer needed.
  </simpara>
 </chapter>
