@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- $Revision$ -->
-<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="radius.examples">
+<chapter xml:id="radius.examples" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">
  &reftitle.examples;
  <!-- FIXME: Copy&paste the examples from this "package" -->
  <para>
@@ -24,8 +24,8 @@
   MS-CHAPv1 or MS-CHAPv2, but its more complicated, because you need md4,
   sha1 and des to generate the right data. The enclosed examples demonstrate
   all authentication-methods, including MS-CHAPv1 and MS-CHAPv2. To get the
-  MS-CHAP to work you need the <link linkend="ref.mcrypt">mcrypt</link> and
-  the <link linkend="ref.mhash">mhash</link> extension, starting with
+  MS-CHAP to work you need the <link xlink:href="https://www.php.net/manual/en/ref.mcrypt.php">mcrypt</link> and
+  the <link xlink:href="https://www.php.net/manual/en/ref.mhash.php">mhash</link> extension, starting with
   version 1.2 of the package, the mcrypt extension is no longer needed.
  </simpara>
 </chapter>

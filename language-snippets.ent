@@ -2245,7 +2245,7 @@ is set to <constant>PDO::ERRMODE_EXCEPTION</constant>.
 <!ENTITY pecl.bundled 'This &link.pecl; extension is bundled with PHP.'>
 
 <!ENTITY pecl.info 'Information for installing this PECL extension may be
-found in the manual chapter titled <link xmlns="http://docbook.org/ns/docbook" linkend="install.pecl">Installation
+found in the manual chapter titled <link xmlns="http://docbook.org/ns/docbook" xlink:href="https://www.php.net/manual/en/install.pecl.php">Installation
 of PECL extensions</link>. Additional information such as new releases,
 downloads, source files, maintainer information, and a CHANGELOG, can be
 located here: '>
@@ -2260,7 +2260,7 @@ this extension is still available within <acronym xmlns="http://docbook.org/ns/d
 
 <!ENTITY pecl.windows.download 'A <acronym xmlns="http://docbook.org/ns/docbook">DLL</acronym> for this
 <acronym xmlns="http://docbook.org/ns/docbook">PECL</acronym> extension is currently unavailable. See also the
-<link xmlns="http://docbook.org/ns/docbook" linkend="install.windows.building">building on Windows</link>
+<link xmlns="http://docbook.org/ns/docbook" xlink:href="https://www.php.net/manual/en/install.windows.building.php">building on Windows</link>
 section.'>
 
 <!ENTITY pecl.windows.download.avail 'Windows binaries (<acronym xmlns="http://docbook.org/ns/docbook">DLL</acronym> files)
@@ -2805,7 +2805,7 @@ objects.  Otherwise, a <classname>PharException</classname> will be thrown.</sim
 
 <!-- XML -->
 <!ENTITY libxml.required '<simpara xmlns="http://docbook.org/ns/docbook">
- This extension requires the <link linkend="book.libxml">libxml</link> PHP extension.
+ This extension requires the <link xlink:href="https://www.php.net/manual/en/book.libxml.php">libxml</link> PHP extension.
  This means passing the <option role="configure">--with-libxml</option>,
  or prior to PHP 7.4 the <option role="configure">--enable-libxml</option>,
  configuration flag, although this is implicitly accomplished because libxml

@@ -30,16 +30,21 @@
 ]>
 
 <set xmlns="http://docbook.org/ns/docbook" version="5.2" xml:id="index" xml:lang="&LANG;" xmlns:xlink="http://www.w3.org/1999/xlink">
- <title>&PHPManual;</title>
+ <info>
+  <title>&PHPManual;</title>
+  <abstract>
+   <para>
+    Documentation for PHP extensions distributed outside the PHP core
+    (PECL and community-maintained packages).
+   </para>
+  </abstract>
+ </info>
 
- <set xml:id="funcref">
-  <title>&FunctionReference;</title>
-  &reference.geoip.book;
-  &reference.gmagick.book;
-  &reference.mqseries.book;
-  &reference.radius.book;
-  &reference.svn.book;
-  &reference.xmlrpc.book;
-  &reference.zmq.book;
- </set>
+ &reference.geoip.book;
+ &reference.gmagick.book;
+ &reference.mqseries.book;
+ &reference.radius.book;
+ &reference.svn.book;
+ &reference.xmlrpc.book;
+ &reference.zmq.book;
 </set>
